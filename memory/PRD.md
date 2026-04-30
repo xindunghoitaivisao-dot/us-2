@@ -47,13 +47,14 @@ Luxury editorial aesthetic — black backgrounds, white text, liquid glass
 - `GET  /api/leads`      → list leads (admin)
 - `POST /api/status`, `GET /api/status` → status checks (template)
 
-## What's Implemented (2026-04-30)
+## What's Implemented (updated 2026-04-30)
 - [x] Vite migration (yarn start = vite, port 3000, wss HMR)
-- [x] Full landing page, all 8 sections
-- [x] BlurText with IntersectionObserver via `motion`'s `useInView`
-- [x] HLS video component with hls.js fallback
-- [x] Lead capture flow end-to-end (verified via screenshot test)
-- [x] Mobile navbar, mobile responsive layout
+- [x] Full landing page, all 9 sections (including Pricing tiers)
+- [x] BlurText, HLS video, liquid-glass aesthetic
+- [x] Frontend-only lead capture via Web3Forms (native form → hidden iframe, no CORS issues)
+- [x] Removed: /admin, AuthProvider, AuthCallback, auth routes, Resend email
+- [x] Backend reduced to `/api/` + `/api/health` only
+- [x] Mobile navbar, responsive layout
 - [x] data-testid on every interactive element
 
 ## Backlog (P1)

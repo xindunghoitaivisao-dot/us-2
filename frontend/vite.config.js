@@ -20,6 +20,9 @@ export default defineConfig(({ mode }) => {
       "process.env.REACT_APP_BACKEND_URL": JSON.stringify(
         env.REACT_APP_BACKEND_URL || ""
       ),
+      "process.env.REACT_APP_WEB3FORMS_KEY": JSON.stringify(
+        env.REACT_APP_WEB3FORMS_KEY || ""
+      ),
     },
     envPrefix: ["VITE_", "REACT_APP_"],
     server: {
