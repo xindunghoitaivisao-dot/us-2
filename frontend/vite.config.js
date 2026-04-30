@@ -2,14 +2,12 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
-// Vite 8 + React. Treat .js files as JSX so existing imports work.
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
     plugins: [
-      react({
-        include: /\.(js|jsx|ts|tsx)$/,
-      }),
+      // Treat .js files as JSX so existing imports keep working
+      react({ include: /\.(js|jsx|ts|tsx)$/ }),
     ],
     resolve: {
       alias: {
@@ -33,12 +31,6 @@ export default defineConfig(({ mode }) => {
       hmr: {
         clientPort: 443,
         protocol: "wss",
-      },
-    },
-    optimizeDeps: {
-      rolldownOptions: {
-        jsx: { mode: "automatic" },
-        loader: { ".js": "jsx" },
       },
     },
     build: {
