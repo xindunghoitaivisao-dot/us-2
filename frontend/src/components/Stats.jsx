@@ -14,7 +14,6 @@ const STATS = [
 export default function Stats() {
   return (
     <section
-      id="pricing"
       data-testid="stats-section"
       className="relative w-full overflow-hidden py-20"
     >

@@ -5,10 +5,10 @@ import BookCallDialog from "@/components/BookCallDialog";
 import Monogram from "@/components/Monogram";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "Process", href: "/#process" },
   { label: "Pricing", href: "/#pricing" },
 ];
 
@@ -48,6 +48,16 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => {
+                if (link.href.startsWith("/#")) {
+                  const id = link.href.slice(2);
+                  const el = document.getElementById(id);
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }
+              }}
               data-testid={`nav-link-${link.label.toLowerCase()}`}
               className="px-3 py-2 text-sm font-medium text-white/90 font-body hover:text-white transition relative z-10"
             >
