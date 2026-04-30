@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import BookCallDialog from "@/components/BookCallDialog";
+import Monogram from "@/components/Monogram";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Process", href: "#process" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/#pricing" },
 ];
 
 export default function Navbar() {
@@ -31,9 +32,7 @@ export default function Navbar() {
           className="flex items-center gap-2 select-none"
         >
           <span className="liquid-glass-strong h-11 w-11 rounded-full flex items-center justify-center">
-            <span className="font-heading italic text-xl text-white relative z-10">
-              M
-            </span>
+            <Monogram size={28} className="relative z-10" />
           </span>
           <span className="hidden sm:inline font-heading italic text-xl text-white tracking-tight">
             MM Innovation

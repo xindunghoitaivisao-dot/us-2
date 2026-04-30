@@ -3,6 +3,7 @@ import { ArrowUpRight, Play } from "lucide-react";
 import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
 import BookCallDialog from "@/components/BookCallDialog";
+import WatchFilmDialog from "@/components/WatchFilmDialog";
 
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4";
@@ -11,6 +12,7 @@ const PARTNERS = ["Stripe", "Vercel", "Linear", "Notion", "Figma"];
 
 export default function Hero() {
   const [callOpen, setCallOpen] = useState(false);
+  const [filmOpen, setFilmOpen] = useState(false);
 
   return (
     <section
@@ -25,7 +27,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        poster="/images/hero_bg.jpeg"
+        poster="/images/hero_bg.svg"
         className="absolute left-0 w-full h-auto object-contain z-0"
         style={{ top: "20%" }}
         data-testid="hero-bg-video"
@@ -113,14 +115,14 @@ export default function Hero() {
             <span className="relative z-10">Get Started</span>
             <ArrowUpRight className="h-4 w-4 relative z-10" />
           </button>
-          <a
-            href="#process"
+          <button
+            onClick={() => setFilmOpen(true)}
             data-testid="hero-cta-watch-film"
             className="inline-flex items-center gap-2 text-white text-sm font-medium font-body hover:opacity-80 transition"
           >
             <Play className="h-4 w-4 fill-white" />
             Watch the Film
-          </a>
+          </button>
         </motion.div>
 
         {/* Partners bar */}
@@ -156,6 +158,7 @@ export default function Hero() {
       </div>
 
       <BookCallDialog open={callOpen} onOpenChange={setCallOpen} />
+      <WatchFilmDialog open={filmOpen} onOpenChange={setFilmOpen} />
     </section>
   );
 }
