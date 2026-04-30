@@ -68,6 +68,11 @@ export default function CtaFooter() {
           </button>
           <a
             href="#pricing"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById("pricing");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
             data-testid="cta-view-pricing"
             className="bg-white text-black rounded-full px-6 py-3 text-sm font-medium font-body hover:bg-white/90 transition"
           >
