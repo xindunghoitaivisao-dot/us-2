@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
 import BookCallDialog from "@/components/BookCallDialog";
 import Monogram from "@/components/Monogram";
 
@@ -26,8 +27,8 @@ export default function Navbar() {
         className="fixed top-4 left-0 right-0 z-50 px-6 sm:px-8 lg:px-16 py-3 flex items-center justify-between"
       >
         {/* Logo */}
-        <a
-          href="#home"
+        <Link
+          to="/"
           data-testid="navbar-logo"
           className="flex items-center gap-2 select-none"
         >
@@ -37,7 +38,7 @@ export default function Navbar() {
           <span className="hidden sm:inline font-heading italic text-xl text-white tracking-tight">
             MM Innovation
           </span>
-        </a>
+        </Link>
 
         {/* Center pill (desktop) */}
         <div
