@@ -205,8 +205,9 @@ const SECTIONS = [
       heading: "Data Protection Contact",
       lines: [
         "MM Innovation Consulting",
-        "Wyoming, United States",
+        "30 N Gould ST STE N SHERIDAN Wyoming, United States",
         "Email: info@mminnovationconsulting.com",
+         "Phone : (307) 6215863",
         "Website: www.mminnovationconsulting.com",
       ],
     },
