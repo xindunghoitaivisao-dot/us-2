@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import BookCallDialog from "@/components/BookCallDialog";
 
 const SECTIONS = [
   {
@@ -170,6 +171,8 @@ const SECTIONS = [
 ];
 
 export default function TermsOfUse() {
+  const [callOpen, setCallOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -319,14 +322,21 @@ export default function TermsOfUse() {
               Terms
             </Link>
             <a
-              href="mailto:info@mminnovationconsulting.com"
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                setCallOpen(true);
+              }}
               className="text-white/40 hover:text-white text-xs font-body transition"
+              data-testid="footer-link-contact"
             >
               Contact
             </a>
           </div>
         </div>
       </footer>
+
+      <BookCallDialog open={callOpen} onOpenChange={setCallOpen} />
     </div>
   );
 }
