@@ -97,7 +97,7 @@ export default function CtaFooter() {
               Privacy
             </a>
             <a
-              href="#"
+              href="/terms"
               className="text-white/40 hover:text-white text-xs font-body transition"
               data-testid="footer-link-terms"
             >
