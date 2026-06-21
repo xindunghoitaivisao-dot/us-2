@@ -90,7 +90,7 @@ export default function CtaFooter() {
           </span>
           <div className="flex items-center gap-6">
             <a
-              href="#"
+              href="/privacy"
               className="text-white/40 hover:text-white text-xs font-body transition"
               data-testid="footer-link-privacy"
             >

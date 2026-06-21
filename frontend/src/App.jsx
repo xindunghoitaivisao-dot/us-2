@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import PricingSection from "@/components/PricingSection";
 import CtaFooter from "@/components/CtaFooter";
 import TermsOfUse from "@/pages/TermsOfUse";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import { Toaster } from "@/components/ui/sonner";
 
 function Landing() {
@@ -38,6 +39,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="*" element={<Landing />} />
       </Routes>
       <Toaster theme="dark" position="bottom-center" />
