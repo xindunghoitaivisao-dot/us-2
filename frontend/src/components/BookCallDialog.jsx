@@ -107,7 +107,7 @@ export default function BookCallDialog({ open, onOpenChange }) {
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent
         data-testid="book-call-dialog"
-        className="bg-zinc-950 border border-white/20 text-white max-w-5xl w-[96vw] p-0 rounded-3xl max-h-[95vh] overflow-y-auto !shadow-none"
+        className="bg-zinc-950 border border-white/20 text-white max-w-5xl w-[96vw] p-0 rounded-3xl sm:rounded-3xl max-h-[95vh] overflow-y-auto !shadow-none"
       >
         <div className="relative p-8 sm:p-12">
           <div className="relative z-10">
